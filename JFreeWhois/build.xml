@@ -1,0 +1,106 @@
+<project name="JFreeWhois" default="run-tests" basedir=".">
+	
+    	<path id="cobertura.class.path">
+    	   <fileset dir="lib/cobertura-1.9.4.1">
+        		<include name="cobertura.jar" />
+        		<include name="lib/**/*.jar" />
+   			</fileset>
+   	    </path>
+    
+	    <taskdef classpathref="cobertura.class.path" resource="tasks.properties"/>
+    
+    	<description> Builds the JFreeWhois Library and runs unit tests.</description>
+	    <property name="src" location="src"/>
+	  	<property name="build" location="build"/>
+	  	<property name="dist"  location="dist"/>
+	  	<property name="lib" value="lib"/>
+		<property name="build.instrumented.dir" value="${build}/instrumented-classes"/>
+	  	<property name="cob.ser.file" value="cobertura.ser" />
+	  	<property name="test-src" location="test"/>
+	  	<property name="test-build" location="test-build"/>
+	  	
+	  	<!-- cobertura properties -->
+		<property name="cobertura.dir" value="cobertura" />
+		<property name="cob.instrumented.dir" value="${cobertura.dir}/instrumented" />
+		<property name="cob.reports.dir" value="${cobertura.dir}/reports" />
+	  	
+	  	
+	  	<path id="classpath">
+		    <fileset dir="${lib}">
+		        <include name="**/*.jar" />
+		    </fileset>
+		</path>
+		
+	  	<path id="test-classpath">
+	  	    <pathelement  location="${build.instrumented.dir}">
+  	        </pathelement >
+	  	    <fileset dir="${lib}">
+		        <include name="**/*.jar" />
+		    </fileset>
+		    <fileset dir="${dist}">
+		        <include name="**/whois.jar" />
+		        <include name="**/whois-test.jar" />
+		    </fileset>
+	    </path>
+	  	
+	  	<target name="clean">
+	  	    <delete file="cobertura.ser" failonerror="false" />
+			<delete dir="${build}" failonerror="false" />
+    		<delete dir="${dist}" failonerror="false" />
+    		<delete dir="${test-build}" failonerror="false" />
+    		<delete dir="${cobertura.dir}" failonerror="false"/>
+    		<mkdir dir="${build}"/>
+    		<mkdir dir="${dist}"/>
+    		<mkdir dir="${test-build}"/>
+    		<mkdir dir="${cobertura.dir}" />
+    		<mkdir dir="${build.instrumented.dir}"/>
+			<mkdir dir="${cob.instrumented.dir}" />
+			<mkdir dir="${cob.reports.dir}" />
+	  	</target>
+	  	   
+		<target name="build" depends="clean">
+		    <javac target="1.6" source="1.6" srcdir="${src}" destdir="${build}" includeantruntime="false" debug="true">
+		         <classpath refid="classpath" />
+		    </javac>
+		</target>
+		
+		<target name="dist" depends="build" description="generate the distribution" >
+		    <!-- Create the distribution directory -->
+		    <mkdir dir="${dist}/lib"/>
+		    <jar jarfile="${dist}/lib/whois.jar" basedir="${build}">
+		    	<zipgroupfileset dir="${lib}" includes="**/simple-xml-2.7.jar" />
+		    	<zipfileset dir="${src}" includes="**/*.xml" />
+		    </jar>
+  		</target>
+  		
+		<target name="build-tests" depends="dist">
+		     <javac target="1.6" source="1.6" srcdir="${test-src}" destdir="${test-build}" includeantruntime="false" debug="true" >
+		         <classpath refid="test-classpath" />
+		    </javac>
+		     <jar jarfile="${dist}/lib/whois-test.jar" basedir="${test-build}">
+		    	<zipfileset dir="${test-src}" includes="**/*.txt" />
+		    </jar>
+		</target>
+		
+		<target name="cobertura-instrumentation">
+			<cobertura-instrument todir="${build.instrumented.dir}">
+			    <ignore regex="org.apache.log4j.*" />
+			    <fileset dir="${build}">
+			        <include name="**/*.class"/>
+			    </fileset>
+			</cobertura-instrument>
+		</target>
+		
+		<target name="run-tests" depends="build-tests, cobertura-instrumentation">
+			<junit printsummary="yes" haltonfailure="yes" showoutput="yes" fork="true">
+			    <formatter type="plain" usefile="false" /> 
+			   	<classpath refid="test-classpath" />
+			    <test name="uk.org.freedonia.jfreewhois.JFreeWhoisTestSuite"/>
+			</junit>
+			<!-- Generate Cobertura html file report  containing the coverage data -->
+    		<cobertura-report format="html" destdir="${cob.reports.dir}" srcdir="${src}" />
+			
+		</target>
+		
+		
+</project>

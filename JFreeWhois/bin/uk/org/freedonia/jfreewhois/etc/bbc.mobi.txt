@@ -1,0 +1,92 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2013 Joe Beeton.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Lesser Public License v2.1
+# which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+# 
+# Contributors:
+#     Joe Beeton - initial API and implementation
+#-------------------------------------------------------------------------------
+mTLD WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS: The WHOIS service offered 
+by mTLD and the access to the records in the mTLD WHOIS database are provided
+for information purposes only. It allows persons to check whether a specific 
+domain name is still available or not and to obtain information related to   
+the registration records of existing domain names. mTLD cannot, under any    
+circumstances, be held liable in case the stored information would prove to  
+be wrong, incomplete, or not accurate in any sense.  By submitting a query   
+you agree not to use the information made available to: allow, enable or     
+otherwise support the transmission of unsolicited, commercial advertising or 
+other solicitations whether via email or otherwise; target advertising in any
+possible way; or to cause nuisance in any possible way to the registrants by 
+sending (whether by automated, electronic processes capable of enabling high 
+volumes or other possible means) messages to them.  Without prejudice to the 
+above, it is explicitly forbidden to extract, copy and/or use or re-utilise  
+in any form and by any means (electronically or not) the whole or a          
+quantitatively or qualitatively substantial part of the contents of the WHOIS
+database without prior and explicit permission by mTLD, nor in any attempt   
+hereof, or to apply automated, electronic processes to mTLD (or its systems).
+You agree that any reproduction and/or transmission of data for commercial   
+purposes will always be considered as the extraction of a substantial part of
+the content of the WHOIS database. By submitting the query you agree to abide
+by this policy and accept that mTLD can take measures to limit the use of its
+WHOIS services in order to protect the privacy of its registrants or the     
+integrity of the database.  
+
+Domain ID:D30941-MOBI
+Domain Name:BBC.MOBI
+Created On:12-Jun-2006 14:01:31 UTC
+Last Updated On:15-Jun-2012 13:24:39 UTC
+Expiration Date:12-Jun-2013 14:01:31 UTC
+Last Transferred Date:12-May-2011 04:15:09 UTC
+Trademark Name:BBC
+Trademark Country:GB
+Trademark Number:1165760
+Date Trademark Applied For:1981-12-02
+Date Trademark Registered:1989-03-10
+Sponsoring Registrar:CSC Corporate Domains, Inc (299)
+Created by Registrar:MarkMonitor Inc. (292)
+Last Updated by Registrar:CSC Corporate Domains, Inc (299)
+Status:CLIENT TRANSFER PROHIBITED
+Registrant ID:48306617521e5872
+Registrant Name:Domain Manager
+Registrant Organization:British Broadcasting Corporation
+Registrant Street1:Broadcasting House
+Registrant Street2:Portland Place
+Registrant City:London
+Registrant State/Province:EN
+Registrant Postal Code:W1A 1AA
+Registrant Country:GB
+Registrant Phone:+44.02080083595
+Registrant FAX:+44.02080082199
+Registrant Email:domain.manager@bbc.co.uk
+Admin ID:4073087751dbf513
+Admin Name:Domain Manager
+Admin Organization:British Broadcasting Corporation
+Admin Street1:Broadcasting House
+Admin Street2:Portland Place
+Admin City:London
+Admin State/Province:EN
+Admin Postal Code:W1A 1AA
+Admin Country:GB
+Admin Phone:+44.02080083595
+Admin FAX:+44.02080082199
+Admin Email:domain.manager@bbc.co.uk
+Tech ID:8854167751e1b029
+Tech Name:Domain Technician
+Tech Organization:British Broadcasting Corporation
+Tech Street1:Broadcasting House
+Tech Street2:Portland Place
+Tech City:London
+Tech State/Province:EN
+Tech Postal Code:W1A 1AA
+Tech Country:GB
+Tech Phone:+44.02080083596
+Tech FAX:+44.02080082199
+Tech Email:domain.technician@bbc.co.uk
+Name Server:NS1.RBSOV.BBC.CO.UK
+Name Server:NS1.TCAMS.BBC.CO.UK
+Name Server:NS1.THDOW.BBC.CO.UK
+
+
+
