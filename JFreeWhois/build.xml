@@ -68,12 +68,15 @@
 		    </javac>
 		</target>
 		
-		<target name="dist" depends="build" description="generate the distribution" >
+		<target name="dist" depends="build, javadoc" description="generate the distribution" >
 		    <!-- Create the distribution directory -->
 		    <mkdir dir="${dist}/lib"/>
 		    <jar jarfile="${dist}/lib/whois.jar" basedir="${build}">
 		    	<zipgroupfileset dir="${lib}" includes="**/simple-xml-2.7.jar" />
 		    	<zipfileset dir="${src}" includes="**/*.xml" />
+		    </jar>
+		    <jar jarfile="${dist}/lib/whois-src.jar" basedir="${build}">
+		    	<zipfileset dir="${src}" includes="**/*.*" />
 		    </jar>
   		</target>
   		
