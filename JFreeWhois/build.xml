@@ -14,6 +14,7 @@
 	  	<property name="build" location="build"/>
 	  	<property name="dist"  location="dist"/>
 	  	<property name="lib" value="lib"/>
+	  	<property name="doc" value="doc"/>
 		<property name="build.instrumented.dir" value="${build}/instrumented-classes"/>
 	  	<property name="cob.ser.file" value="cobertura.ser" />
 	  	<property name="test-src" location="test"/>
@@ -49,6 +50,8 @@
     		<delete dir="${dist}" failonerror="false" />
     		<delete dir="${test-build}" failonerror="false" />
     		<delete dir="${cobertura.dir}" failonerror="false"/>
+    		<delete dir="${cobertura.dir}" failonerror="false"/>
+    		<delete dir="${doc}" failonerror="false"/>
     		<mkdir dir="${build}"/>
     		<mkdir dir="${dist}"/>
     		<mkdir dir="${test-build}"/>
@@ -56,6 +59,7 @@
     		<mkdir dir="${build.instrumented.dir}"/>
 			<mkdir dir="${cob.instrumented.dir}" />
 			<mkdir dir="${cob.reports.dir}" />
+			<mkdir dir="${doc}"/>
 	  	</target>
 	  	   
 		<target name="build" depends="clean">
@@ -101,6 +105,18 @@
     		<cobertura-report format="html" destdir="${cob.reports.dir}" srcdir="${src}" />
 			
 		</target>
+		
+		
+		<target name="javadoc">
+        	<javadoc access="public" author="true" 
+        	    source="1.6" 
+        	    sourcepath="src" 
+        	    destdir="${doc}"
+        	    splitindex="true" 
+        	    use="true"
+        	    version="true"/>
+        	<jar compress="true" destfile="${dist}/lib/whois-javadoc.jar" basedir="doc" />
+    	</target>
 		
 		
 </project>
