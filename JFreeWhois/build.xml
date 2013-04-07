@@ -117,7 +117,9 @@
         	    destdir="${doc}"
         	    splitindex="true" 
         	    use="true"
-        	    version="true"/>
+        	    version="true">
+        	    	<link href="http://docs.oracle.com/javase/6/docs/api/" offline="false"/>
+        		</javadoc>
         	<jar compress="true" destfile="${dist}/lib/whois-javadoc.jar" basedir="doc" />
     	</target>
 		

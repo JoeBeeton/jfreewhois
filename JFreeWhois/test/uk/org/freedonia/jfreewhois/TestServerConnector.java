@@ -38,7 +38,7 @@ public class TestServerConnector extends TestBase {
 	public void testWithValidServer() {
 		ServerDefinitionFinder finder = new ServerDefinitionFinder();
 		try {
-			String hostName = "freedonia.org.uk";
+			String hostName = "google.tz";
 			List<WhoisServerDefinition> freedoniaServers = finder.getServerDefinitionsForHostName(hostName);
 			ServerConnector connector = new ServerConnector();
 			RawResponseParser rawParser = new RawResponseParser();

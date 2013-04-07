@@ -44,6 +44,8 @@ import uk.org.freedonia.jfreewhois.result.ResultSegment;
 @PrepareForTest( ServerConnectorUtils.class )
 public class TestWhois extends TestBase {
 
+
+	
 	@Test
 	public void testGetWhoisResults() {
 		try {
